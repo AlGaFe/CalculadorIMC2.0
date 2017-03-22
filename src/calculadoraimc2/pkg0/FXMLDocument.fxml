@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="384.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadoraimc2.pkg0.FXMLDocumentController">
+   <children>
+      <Label layoutX="167.0" layoutY="14.0" prefHeight="22.0" prefWidth="178.0" text="Índice de Masa Corporal (IMC)" textFill="#1e00ff">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="AlturaLabel" layoutX="54.0" layoutY="60.0" prefHeight="22.0" prefWidth="43.0" text="Altura:" />
+      <Label fx:id="PesoLabel" layoutX="43.0" layoutY="137.0" prefHeight="22.0" prefWidth="34.0" text="Peso:" />
+      <TextField fx:id="Estatura" layoutX="98.0" layoutY="60.0" onAction="#IntroducirAltura" prefHeight="22.0" prefWidth="109.0" />
+      <TextField fx:id="Peso" layoutX="86.0" layoutY="137.0" onAction="#IntroducirPeso" prefHeight="22.0" prefWidth="102.0" />
+      <Label layoutX="224.0" layoutY="60.0" prefHeight="22.0" prefWidth="34.0" text="Cm" />
+      <Label layoutX="209.0" layoutY="137.0" prefHeight="22.0" prefWidth="34.0" text="Kg" />
+      <Label fx:id="IMCLabel" layoutX="131.0" layoutY="171.0" prefHeight="26.0" prefWidth="102.0" text="Su IMC es:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="Obesidad" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" onAction="#ActionObesidad" text="Obesidad (IMC&gt;30)" />
+      <RadioButton fx:id="SobrePreso" layoutX="14.0" layoutY="279.0" mnemonicParsing="false" onAction="#ActionSobrepeso" text="Sobrepeso (25 &lt; IMC&lt;29.9)" />
+      <RadioButton fx:id="Normal" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#ActionNormal" text="Normal (18.5 &lt; IMC &lt; 24.9)" />
+      <RadioButton fx:id="Delgadez" layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onAction="#ActionDelgadez" text="Extrema Delgadez (IMC&lt;18.5)" />
+      <Separator layoutX="9.0" layoutY="36.0" prefHeight="15.0" prefWidth="485.0" />
+      <Separator layoutX="14.0" layoutY="200.0" prefHeight="22.0" prefWidth="476.0" />
+      <Slider fx:id="SlideAltura" layoutX="274.0" layoutY="71.0" majorTickUnit="10.0" max="250.0" min="50.0" onMouseClicked="#SlideDeAltura" onMouseDragged="#SlideDeAltura" prefHeight="13.0" prefWidth="206.0" showTickLabels="true" showTickMarks="true" value="50.0">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Slider>
+      <ScrollBar fx:id="ScrollPeso" layoutX="274.0" layoutY="141.0" max="600.0" min="20.0" onMouseClicked="#ScrollDePeso" onMouseDragged="#ScrollDePeso" prefHeight="14.0" prefWidth="206.0" value="20.0">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ScrollBar>
+      <Label fx:id="ResultadoLabel" layoutX="233.0" layoutY="171.0" prefHeight="26.0" prefWidth="102.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ListView fx:id="DescripcionID" layoutX="201.0" layoutY="212.0" onMouseDragEntered="#SeleccionCurso" prefHeight="209.0" prefWidth="292.0" />
+   </children>
+</AnchorPane>
